@@ -65,7 +65,7 @@ pip install -q xformers==0.0.16 triton==2.0.0 -U
 git clone -b v2.1 https://github.com/camenduru/stable-diffusion-webui "$SD"
 
 mydrive_sd="$DRIVE/MyDrive/Stable Diffusion"
-mkdir -p "$mydrive_sd/"{models,outputs}
+mkdir -p "$mydrive_sd/"{models,outputs} "$SD/"{models,outputs}
 mountpoint -q "$SD/models" || mount -o rw,bind "$mydrive_sd/models" "$SD/models"
 mountpoint -q "$SD/outputs" || mount -o rw,bind "$mydrive_sd/outputs" "$SD/outputs"
 [ -e "$mydrive_sd/models/Stable-diffusion" ] && install_model=false
